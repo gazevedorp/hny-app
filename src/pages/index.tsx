@@ -266,10 +266,10 @@ export default function Timeline() {
                 className="rounded"
               />
               <div>
-                <h2 className="text-lg font-semibold text-gray-400">
+                <h2 className="font-semibold text-gray-400">
                   {event.city}, {event.country}
                 </h2>
-                <p className="text-gray-400">{event.time}</p>
+                <p className="text-gray-400 text-sm">{event.time}</p>
               </div>
             </div>
           </div>
