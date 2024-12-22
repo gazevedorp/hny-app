@@ -1,114 +1,108 @@
 import Image from "next/image";
-import { Geist, Geist_Mono } from "next/font/google";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+const timeline = [
+  {
+    time: "9h00 BRT (31/12)",
+    city: "Auckland",
+    country: "Nova Zelândia",
+    code: "NZ",
+  },
+  {
+    time: "10h00 BRT (31/12)",
+    city: "Sydney",
+    country: "Austrália",
+    code: "AU",
+  },
+  { time: "12h00 BRT (31/12)", city: "Tóquio", country: "Japão", code: "JP" },
+  {
+    time: "12h00 BRT (31/12)",
+    city: "Seul",
+    country: "Coreia do Sul",
+    code: "KR",
+  },
+  {
+    time: "13h00 BRT (31/12)",
+    city: "Hong Kong",
+    country: "China",
+    code: "HK",
+  },
+  {
+    time: "13h00 BRT (31/12)",
+    city: "Singapura",
+    country: "Singapura",
+    code: "SG",
+  },
+  { time: "13h00 BRT (31/12)", city: "Taipei", country: "Taiwan", code: "TW" },
+  {
+    time: "14h00 BRT (31/12)",
+    city: "Bangkok",
+    country: "Tailândia",
+    code: "TH",
+  },
+  {
+    time: "17h00 BRT (31/12)",
+    city: "Dubai",
+    country: "Emirados Árabes Unidos",
+    code: "AE",
+  },
+  { time: "18h00 BRT (31/12)", city: "Moscou", country: "Rússia", code: "RU" },
+  {
+    time: "19h00 BRT (31/12)",
+    city: "Cidade do Cabo",
+    country: "África do Sul",
+    code: "ZA",
+  },
+  { time: "20h00 BRT (31/12)", city: "Paris", country: "França", code: "FR" },
+  {
+    time: "21h00 BRT (31/12)",
+    city: "Londres",
+    country: "Inglaterra",
+    code: "GB",
+  },
+  {
+    time: "0h00 BRT (01/01)",
+    city: "Rio de Janeiro",
+    country: "Brasil",
+    code: "BR",
+  },
+  { time: "2h00 BRT (01/01)", city: "Nova York", country: "EUA", code: "US" },
+  { time: "5h00 BRT (01/01)", city: "Los Angeles", country: "EUA", code: "US" },
+  { time: "7h00 BRT (01/01)", city: "Honolulu", country: "Havaí", code: "US" },
+];
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-export default function Home() {
+export default function Timeline() {
   return (
-    <div
-      className={`${geistSans.variable} ${geistMono.variable} grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]`}
-    >
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/pages/index.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="min-h-screen bg-gray-700 py-8 px-4">
+      {/* <h1 className="text-center text-3xl font-bold text-black mb-8">
+        Linha do Tempo - Réveillon Mundial
+      </h1> */}
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      {/* Container que limita a largura e desenha a linha à esquerda */}
+      <div className="max-w-xl mx-auto border-l border-gray-300 pl-8 relative">
+        {timeline.map((event, index) => (
+          <div key={index} className="relative mb-8">
+            {/* Bolinha que fica sobre a linha */}
+            <div className="absolute -left-6 top-7 w-4 h-1 bg-gray-100" />
+            
+            {/* Conteúdo da timeline (bandeira + texto) */}
+            <div className="flex items-center space-x-4">
+              <Image
+                src={`https://flagsapi.com/${event.code}/shiny/64.png`}
+                alt={`Bandeira de ${event.country}`}
+                width={64}
+                height={64}
+                className="rounded"
+              />
+              <div>
+                <h2 className="text-lg font-semibold text-gray-400">
+                  {event.city}, {event.country}
+                </h2>
+                <p className="text-gray-400">{event.time}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
